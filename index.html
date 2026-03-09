@@ -41,17 +41,15 @@ font-weight:bold;
 margin-top:25px;
 display:flex;
 justify-content:center;
-gap:15px;
-flex-wrap:wrap;
+gap:20px;
 }
 
 button{
-padding:15px 28px;
+padding:15px 30px;
 font-size:18px;
 border:none;
 border-radius:10px;
 cursor:pointer;
-min-width:110px;
 }
 
 .yes{
@@ -66,22 +64,25 @@ color:white;
 
 .result{
 display:none;
+flex-direction:column;
+align-items:center;
 text-align:center;
 padding:40px 20px;
+width:100%;
 }
 
 .result img{
 width:90%;
-max-width:450px;
+max-width:400px;
 margin-top:20px;
 }
 
-/* Celebration Text Animation */
+/* Animated Text */
 
 .celebrate{
 font-size:42px;
 font-weight:bold;
-margin-bottom:25px;
+margin-bottom:20px;
 animation:bounce 1s infinite alternate, rainbow 3s infinite;
 }
 
@@ -150,8 +151,12 @@ noBtn.addEventListener("mouseover", moveButton);
 noBtn.addEventListener("touchstart", moveButton);
 
 document.getElementById("yesBtn").onclick = function(){
+
 document.getElementById("mainContent").style.display = "none";
-document.getElementById("resultScreen").style.display = "block";
+
+const result = document.getElementById("resultScreen");
+result.style.display = "flex";
+
 };
 
 </script>
