@@ -13,14 +13,13 @@ font-family:Arial, Helvetica, sans-serif;
 background:#f7f7f7;
 display:flex;
 justify-content:center;
-align-items:center;
-height:100vh;
-overflow:hidden;
+align-items:flex-start;
+min-height:100vh;
 }
 
 .container{
 text-align:center;
-padding:20px;
+padding:40px 20px;
 max-width:500px;
 width:100%;
 }
@@ -33,10 +32,9 @@ box-shadow:0 10px 25px rgba(0,0,0,0.2);
 }
 
 .question{
-margin-top:20px;
+margin-top:25px;
 font-size:22px;
 font-weight:bold;
-padding:0 10px;
 }
 
 .buttons{
@@ -69,10 +67,8 @@ position:absolute;
 
 .result{
 display:none;
-justify-content:center;
-align-items:center;
-height:100vh;
-width:100%;
+text-align:center;
+padding:40px 20px;
 }
 
 .result img{
@@ -87,7 +83,7 @@ max-width:450px;
 
 <div class="container" id="mainContent">
 
-<img src="IMG_0179.jpeg">
+<img src="./IMG_0179.jpeg">
 
 <div class="question">
 Is Bin the cutest girl in the world?
@@ -101,7 +97,7 @@ Is Bin the cutest girl in the world?
 </div>
 
 <div class="result" id="resultScreen">
-<img src="IMG_2183.JPG">
+<img src="./IMG_2183.JPG">
 </div>
 
 <script>
@@ -109,24 +105,19 @@ Is Bin the cutest girl in the world?
 const noBtn = document.getElementById("noBtn");
 
 function moveButton(){
-const padding = 80;
-
-const x = Math.random() * (window.innerWidth - padding);
-const y = Math.random() * (window.innerHeight - padding);
+const x = Math.random() * (window.innerWidth - 120);
+const y = Math.random() * (window.innerHeight - 80);
 
 noBtn.style.left = x + "px";
 noBtn.style.top = y + "px";
 }
 
-// run away on hover (desktop)
 noBtn.addEventListener("mouseover", moveButton);
-
-// run away on touch (mobile)
 noBtn.addEventListener("touchstart", moveButton);
 
 document.getElementById("yesBtn").onclick = function(){
 document.getElementById("mainContent").style.display = "none";
-document.getElementById("resultScreen").style.display = "flex";
+document.getElementById("resultScreen").style.display = "block";
 };
 
 </script>
