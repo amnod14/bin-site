@@ -62,7 +62,6 @@ color:white;
 .no{
 background:#e74c3c;
 color:white;
-position:absolute;
 }
 
 .result{
@@ -74,6 +73,29 @@ padding:40px 20px;
 .result img{
 width:90%;
 max-width:450px;
+margin-top:20px;
+}
+
+/* Celebration Text Animation */
+
+.celebrate{
+font-size:42px;
+font-weight:bold;
+margin-bottom:25px;
+animation:bounce 1s infinite alternate, rainbow 3s infinite;
+}
+
+@keyframes bounce{
+0%{transform:translateY(0)}
+100%{transform:translateY(-15px)}
+}
+
+@keyframes rainbow{
+0%{color:#ff4d6d}
+25%{color:#ff914d}
+50%{color:#ffd24d}
+75%{color:#4dff88}
+100%{color:#4d9fff}
 }
 
 </style>
@@ -97,14 +119,26 @@ Is Bin the cutest girl in the world?
 </div>
 
 <div class="result" id="resultScreen">
+
+<h1 class="celebrate">BINNY IS DA BEST</h1>
+
 <img src="./IMG_2183.JPG">
+
 </div>
 
 <script>
 
 const noBtn = document.getElementById("noBtn");
 
+let moved = false;
+
 function moveButton(){
+
+if(!moved){
+noBtn.style.position = "absolute";
+moved = true;
+}
+
 const x = Math.random() * (window.innerWidth - 120);
 const y = Math.random() * (window.innerHeight - 80);
 
